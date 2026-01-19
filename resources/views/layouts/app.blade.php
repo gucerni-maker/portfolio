@@ -46,6 +46,26 @@
         a:hover {
             color: #0bb8d9;
         }
+
+        .contact-form input,
+        .contact-form textarea {
+            transition: all 0.2s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background-color: #495057;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+
+        .contact-form button {
+            transition: all 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-1px);
+        }
+
     </style>
 </head>
 <body>
@@ -68,35 +88,69 @@
 
     <!-- Footer -->
 
-    <footer class="mt-5 bg-dark text-light">
-        <div class="container py-4">
-            <div class="row">
-                <!-- Contacto -->
-                <div class="col-md-6 mb-3">
-                    <h5 class="text-info">Contáctame</h5>
-                    <form action="mailto:tuemail@ejemplo.com" method="post" class="d-flex flex-column gap-2">
-                        <input type="text" name="name" placeholder="Nombre" class="form-control bg-secondary text-light border-0" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" class="form-control bg-secondary text-light border-0" required>
-                        <textarea name="message" rows="3" placeholder="Mensaje" class="form-control bg-secondary text-light border-0" required></textarea>
-                        <button type="submit" class="btn btn-outline-info mt-2 align-self-start">Enviar</button>
-                    </form>
-                </div>
+<footer id="contacto" class="mt-5 bg-dark text-light">
+    <div class="container py-5">
+        <div class="row gy-4">
 
-                <!-- Redes y créditos -->
-                <div class="col-md-6 mb-3 text-md-end">
-                    <h5 class="text-info">Redes</h5>
-                    <a href="https://www.linkedin.com/" target="_blank" class="me-3">
+            <!-- Sobre mí -->
+            <div class="col-md-4">
+                <h5 class="text-info">Sobre mí</h5>
+                <p class="small">
+                    Desarrollador de software especializado en Laravel, MySQL y administración de servidores Linux.
+                    Enfocado en crear soluciones prácticas, seguras y bien estructuradas.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="col-md-4">
+                <h5 class="text-info">Contacto</h5>
+                @if(session('success'))
+                    <div class="alert alert-success py-2">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                <div class="alert alert-danger py-2">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <form action="{{ route('contact.send') }}" method="POST" class="contact-form d-flex flex-column gap-2">
+                    @csrf
+                    <input type="text" name="name" placeholder="Nombre" class="form-control bg-secondary text-light border-0" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" class="form-control bg-secondary text-light border-0" required>
+                    <textarea name="message" rows="3" placeholder="Mensaje" class="form-control bg-secondary text-light border-0" required></textarea>
+                    <button type="submit" class="btn btn-outline-info btn-sm align-self-start">
+                        Enviar mensaje
+                    </button>
+                </form>
+            </div>
+
+            <!-- Redes -->
+            <div class="col-md-4 text-md-end">
+                <h5 class="text-info">Redes</h5>
+                <div class="d-flex flex-column gap-2">
+                    <a href="#" target="_blank">
                         <i class="bi bi-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/" target="_blank">
+                    <a href="#" target="_blank">
                         <i class="bi bi-github"></i> GitHub
                     </a>
-
-                    <p class="mt-3 mb-0">© {{ date('Y') }} - Desarrollado por Gustavo</p>
                 </div>
+
+                <p class="small mt-3 mb-0">
+                    © {{ date('Y') }} Gustavo Cerda
+                </p>
             </div>
+
         </div>
-    </footer>
+    </div>
+</footer>
+
 
 
     <!-- Bootstrap JS -->

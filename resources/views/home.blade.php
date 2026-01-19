@@ -10,17 +10,18 @@
         <div class="position-relative z-1">
             <h1 class="display-4 fw-bold text-info mb-3 fade-in">¡Hola! Soy Gustavo</h1>
             <p class="lead text-light mb-4 fade-in" style="animation-delay:0.2s;">
-                Desarrollador de software especializado en Laravel, MySQL y administración de servidores Linux.
-                Me apasiona crear soluciones prácticas, seguras y elegantes.
+                Este portafolio y sus proyectos están desplegados en un servidor Ubuntu Linux sobre AWS EC2.
+                En este servidor se realizó manualmente la instalación de PHP, Base de datos y otras herramientas con sus dependencias necesarias para su puesta en producción.
             </p>
 
             <!-- Skills rápidas como badges -->
             <div class="d-flex justify-content-center flex-wrap gap-2 mb-4 fade-in" style="animation-delay:0.4s;">
+                <span class="badge bg-info text-dark">Proyectos desplegados en producción</span>
+                <span class="badge bg-info text-dark">AWS EC2</span>
                 <span class="badge bg-info text-dark">Laravel</span>
                 <span class="badge bg-info text-dark">MySQL</span>
                 <span class="badge bg-info text-dark">PHP</span>
                 <span class="badge bg-info text-dark">Linux</span>
-                <span class="badge bg-info text-dark">Ciberseguridad</span>
             </div>
 
             <!-- Botón de acción -->
@@ -30,13 +31,32 @@
 
     <!-- Sobre mí -->
     <section class="mb-5">
-        <h2 class="text-center text-info mb-4 fade-in">Sobre mí</h2>
+        <h2 class="text-center text-info mb-4 fade-in mt-5">Sobre mí</h2>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <p class="text-light fs-5 text-center fade-in">
-                    Soy desarrollador de software con experiencia en Laravel, MySQL y administración de servidores Linux. 
-                    Me apasiona crear soluciones prácticas, seguras y elegantes, y siempre busco aprender nuevas tecnologías 
-                    y mejorar mis proyectos. Fuera del código, disfruto explorando nuevas herramientas de productividad y diseño.
+                    Soy desarrollador de software enfocado en backend, con experiencia práctica en Laravel, MySQL y administración de servidores Linux.
+                    He desplegado proyectos reales en instancias EC2 de AWS, encargándome de la instalación y configuración del entorno completo: 
+                    PHP, servidor web, base de datos, Composer y dependencias del sistema.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center py-5 position-relative" style="background: linear-gradient(135deg, #121212, #1a1a1a);">
+        <h2 class="text-center text-info mb-4 fade-in">Infraestructura y despliegue</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <p class="text-light fs-5 text-center fade-in">
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Aplicaciones desplegadas en AWS EC2</li>
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Sistema operativo Linux</li>
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Instalación y configuración de PHP</li>
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Uso de Composer para dependencias</li>
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Base de datos MySQL</li>
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Variables de entorno y configuración segura</li>
+                        <li class="list-group-item"><i class="bi bi-dot"></i>Manejo de servidores vía SSH</li>
+                    </ul>
                 </p>
             </div>
         </div>
@@ -44,7 +64,7 @@
 
     <!-- Proyectos -->
     <section id="proyectos" class="mb-5">
-        <h2 class="text-center text-info mb-4">Mis Proyectos</h2>
+        <h2 class="text-center text-info mb-4 mt-5">Mis Proyectos</h2>
         <div class="row g-4">
             <!-- Proyecto 1 -->
             <div class="col-md-4">
