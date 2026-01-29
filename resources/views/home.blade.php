@@ -10,7 +10,7 @@
         <div class="position-relative z-1">
             <h1 class="display-4 fw-bold text-info mb-3 fade-in">¡Hola! Soy Gustavo</h1>
             <p class="lead text-light mb-4 fade-in" style="animation-delay:0.2s;">
-                Este portafolio y sus proyectos están desplegados en un servidor Ubuntu Linux sobre AWS EC2.
+                Este portafolio y sus proyectos están creados en Laravel con MySQL y desplegados en un servidor Ubuntu Linux sobre AWS EC2.
                 En este servidor se realizó manualmente la instalación de PHP, Base de datos y otras herramientas con sus dependencias necesarias para su puesta en producción.
             </p>
 
@@ -70,12 +70,12 @@
             <div class="col-md-4">
                 <div class="card bg-dark text-light shadow-lg h-100">
                     <video autoplay loop muted playsinline class="card-img-top">
-                        <source src="{{ asset('images/pkmn3.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('images/pkmn4.mp4') }}" type="video/mp4">
                     </video>
                     <div class="card-body">
                         <h5 class="card-title text-info">Proyecto PokeAPI</h5>
                         <p class="card-text">Aplicación en Laravel que consume la PokeAPI para mostrar información de Pokémon en tiempo real.</p>
-                        <a href="#" class="btn btn-outline-info">Ver Proyecto</a>
+                        <a href="http://pokedex.56.125.101.83.nip.io/" class="btn btn-outline-info">Ver Proyecto</a>
                     </div>
                 </div>
             </div>
@@ -84,12 +84,12 @@
             <div class="col-md-4">
                 <div class="card bg-dark text-light shadow-lg h-100">
                     <video autoplay loop muted playsinline class="card-img-top">
-                        <source src="{{ asset('images/pkmn3.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('images/monitoreo5.mp4') }}" type="video/mp4">
                     </video>
                     <div class="card-body">
-                        <h5 class="card-title text-info">Inventario de Videojuegos</h5>
-                        <p class="card-text">CRUD en Laravel y MySQL para gestionar stock de videojuegos con interfaz sencilla y funcional.</p>
-                        <a href="#" class="btn btn-outline-info">Ver Proyecto</a>
+                        <h5 class="card-title text-info">Sistema de Monitoreo</h5>
+                        <p class="card-text">Monitorear el estado de servidores, con el cual se puede saber el consumo de recursos de Hardware</p>
+                        <a href="http://monitoreo.56.125.101.83.nip.io/" class="btn btn-outline-info">Ver Proyecto</a>
                     </div>
                 </div>
             </div>
