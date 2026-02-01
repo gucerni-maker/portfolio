@@ -11,76 +11,62 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
-    body {
-        background-color: #0f172a;
-        background-image: 
-            radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
-            radial-gradient(circle at 90% 80%, rgba(13, 148, 136, 0.08) 0%, transparent 25%),
-            radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.05) 0%, transparent 30%);
-        background-attachment: fixed;
-        color: #e2e8f0;
-        font-family: 'Poppins', -apple-system, sans-serif;
-    }
-    
-    .navbar {
-        background-color: rgba(26, 32, 44, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-    }
-    
-.card {
-    background: linear-gradient(145deg, #111827, #0f172a);
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    color: #f1f5f9;
-    transition: all 0.3s;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-    
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(59, 130, 246, 0.25);
-    border-color: rgba(59, 130, 246, 0.5);
-}
-    
-    .list-group-item {
-        background-color: #1e293b;
-        border-color: rgba(64, 74, 92, 0.5);
-        color: #e2e8f0;
-    }
-    
-footer {
-    background: linear-gradient(to bottom, #0f172a, #0a0f1a);
-    border-top: 1px solid rgba(59, 130, 246, 0.2);
-}
-    
-    a {
-        color: #38bdf8;
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-    
-    a:hover {
-        color: #0ea5e9;
-    }
-    
-    h1, h2, h3, h4, h5 {
-        font-weight: 700;
-        letter-spacing: -0.5px;
-    }
-    
-    .badge {
-        transition: transform 0.2s;
-    }
-    
-    .badge:hover {
-        transform: scale(1.05);
-    }
-</style>
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #1a1a1a;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+            color: #f5f5f5; /* texto blanco dentro de la card */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+        }
+        .list-group-item {
+            background-color: #1e1e1e;
+            border: none;
+            color: #f5f5f5;
+        }
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+        }
+        a {
+            color: #0dcaf0;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #0bb8d9;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            transition: all 0.2s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background-color: #495057;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+
+        .contact-form button {
+            transition: all 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-1px);
+        }
+
+    </style>
 </head>
 <body>
 

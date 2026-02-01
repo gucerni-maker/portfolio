@@ -2,65 +2,89 @@
 
 @section('content')
     <!-- Hero Mejorado -->
-    <section class="text-center py-5 position-relative" style="background: linear-gradient(135deg, #121212, #1a1a1a);">
-        <!-- Fondo sutil opcional -->
-        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:url('{{ asset('images/tech-pattern.png') }}') center/cover no-repeat; opacity:0.05; z-index:0;"></div>
+<section class="text-center py-5 position-relative" style="background: linear-gradient(135deg, #0f172a, #1e293b);">
+    <!-- Fondo con patrón de cuadrícula sutil -->
+    <div class="position-absolute w-100 h-100" style="
+        background: 
+            linear-gradient(rgba(12, 74, 110, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(12, 74, 110, 0.05) 1px, transparent 1px),
+            linear-gradient(135deg, #0f172a, #1e293b);
+        background-size: 40px 40px;
+        z-index: 0;
+    "></div>
 
-        <!-- Contenido del Hero -->
-        <div class="position-relative z-1">
-            <h1 class="display-4 fw-bold text-info mb-3 fade-in">¡Hola! Soy Gustavo</h1>
-            <p class="lead text-light mb-4 fade-in" style="animation-delay:0.2s;">
-                Este portafolio y sus proyectos están creados en Laravel con MySQL y desplegados en un servidor Ubuntu Linux sobre AWS EC2.
-                En este servidor se realizó manualmente la instalación de PHP, Base de datos y otras herramientas con sus dependencias necesarias para su puesta en producción.
-            </p>
-
-            <!-- Skills rápidas como badges -->
-            <div class="d-flex justify-content-center flex-wrap gap-2 mb-4 fade-in" style="animation-delay:0.4s;">
-                <span class="badge bg-info text-dark">Proyectos desplegados en producción</span>
-                <span class="badge bg-info text-dark">AWS EC2</span>
-                <span class="badge bg-info text-dark">Laravel</span>
-                <span class="badge bg-info text-dark">MySQL</span>
-                <span class="badge bg-info text-dark">PHP</span>
-                <span class="badge bg-info text-dark">Linux</span>
+    <div class="position-relative z-1 container">
+        <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+            <!-- Icono técnico -->
+            <div class="bg-dark p-3 rounded-circle border border-info" style="background-color: #0a192f !important;">
+                <i class="bi bi-cpu fs-1 text-info"></i>
             </div>
-
-            <!-- Botón de acción -->
-            <a href="#proyectos" class="btn btn-outline-info btn-lg fade-in" style="animation-delay:0.6s;">Ver mis proyectos</a>
+            <h1 class="display-4 fw-bold text-white mb-0">¡Hola! Soy Gustavo</h1>
         </div>
-    </section>
+        
+        <p class="lead text-light mb-4" style="max-width: 800px; margin: 0 auto;">
+            Fullstack Developer especializado en <span class="text-info fw-bold">Laravel</span> e <span class="text-info fw-bold">infraestructura AWS</span>. 
+            He desplegado proyectos reales en <span class="text-info fw-bold">EC2</span> desde cero: 
+            instalación de PHP, MySQL, Composer y configuración segura.
+        </p>
 
-    <!-- Sobre mí -->
-    <section class="mb-5">
-        <h2 class="text-center text-info mb-4 fade-in mt-5">Sobre mí</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <p class="text-light fs-5 text-center fade-in">
-                    Soy desarrollador de software enfocado en backend, con experiencia práctica en Laravel, MySQL y administración de servidores Linux.
-                    He desplegado proyectos reales en instancias EC2 de AWS, encargándome de la instalación y configuración del entorno completo: 
-                    PHP, servidor web, base de datos, Composer y dependencias del sistema.
+        <!-- Badges con categorización -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+            <span class="badge" style="background-color: #1e40af; color: white;">AWS EC2</span>
+            <span class="badge" style="background-color: #059669; color: white;">Laravel</span>
+            <span class="badge" style="background-color: #b45309; color: white;">Linux</span>
+            <span class="badge" style="background-color: #7e22ce; color: white;">MySQL</span>
+            <span class="badge" style="background-color: #0891b2; color: white;">PHP</span>
+        </div>
+
+        <a href="#proyectos" class="btn btn-info btn-lg px-5 py-3 shadow-lg">
+            <i class="bi bi-arrow-down-circle me-2"></i>Ver mis proyectos
+        </a>
+    </div>
+</section>
+
+<section class="mb-5 py-5 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h2 class="text-info mb-4">Sobre mí</h2>
+                <p class="text-gray-300 fs-5">
+                    Soy desarrollador backend enfocado en crear soluciones <span class="text-emerald-400 font-medium">escalables</span> y 
+                    <span class="text-amber-40 font-medium">seguras</span>. 
+                    Mi experiencia incluye:
                 </p>
+                <ul class="list-unstyled mt-4">
+                    <li class="d-flex gap-2 mb-2">
+                        <i class="bi bi-check-circle text-info"></i>
+                        <span>Despliegue en AWS EC2 desde cero (Linux + PHP + MySQL)</span>
+                    </li>
+                    <li class="d-flex gap-2 mb-2">
+                        <i class="bi bi-check-circle text-info"></i>
+                        <span>Configuración de entornos seguros con variables de entorno</span>
+                    </li>
+                    <li class="d-flex gap-2">
+                        <i class="bi bi-check-circle text-info"></i>
+                        <span>Gestión de dependencias con Composer y optimización de rendimiento</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Elemento visual técnico -->
+            <div class="col-md-6 text-center">
+                <div class="bg-gray-800 rounded-3 p-4 shadow-lg border border-gray-700">
+                    <div class="d-flex justify-content-center mb-3">
+                        <span class="bg-blue-900 text-white px-3 py-1 rounded">EC2</span>
+                        <span class="bg-purple-900 text-white px-3 py-1 rounded ms-2">Laravel</span>
+                    </div>
+                    <div class="text-gray-400" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                        $ sudo apt install php mysql-server<br>
+                        $ composer create-project laravel/laravel<br>
+                        $ aws ec2 run-instances --image-id ami-0...
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section class="text-center py-5 position-relative" style="background: linear-gradient(135deg, #121212, #1a1a1a);">
-        <h2 class="text-center text-info mb-4 fade-in">Infraestructura y despliegue</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <p class="text-light fs-5 text-center fade-in">
-                    <ul class="list-group">
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Aplicaciones desplegadas en AWS EC2</li>
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Sistema operativo Linux</li>
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Instalación y configuración de PHP</li>
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Uso de Composer para dependencias</li>
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Base de datos MySQL</li>
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Variables de entorno y configuración segura</li>
-                        <li class="list-group-item"><i class="bi bi-dot"></i>Manejo de servidores vía SSH</li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- Proyectos -->
     <section id="proyectos" class="mb-5">
@@ -111,39 +135,86 @@
     </section>
 
     <!-- Skills -->
-    <section class="mb-5">
-        <h2 class="text-center text-info mb-4">Conocimientos</h2>
-        <div class="row text-center">
-            <div class="col-md-3 mb-3">
-                <div class="p-3 bg-dark rounded shadow-sm">
-                    <i class="bi bi-code-slash fs-2 text-info"></i>
-                    <h5 class="mt-2">Lenguajes</h5>
-                    <p>PHP, Python, JavaScript, C++, Java</p>
+<section class="mb-5 py-5">
+    <h2 class="text-center text-info mb-4">Conocimientos</h2>
+    <div class="row text-center g-4">
+        <!-- Lenguajes -->
+        <div class="col-md-3">
+            <div class="p-4 rounded-3 shadow-sm" style="
+                background: linear-gradient(145deg, #111827, #0f172a);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                transition: all 0.3s;
+                height: 100%;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(59, 130, 246, 0.2)'; this.style.borderColor='rgba(59, 130, 246, 0.6)';" 
+            onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.3)'; this.style.borderColor='rgba(59, 130, 246, 0.3)';">
+                <div class="mb-3">
+                    <div class="d-inline-block p-3 rounded-circle" style="background-color: rgba(139, 92, 246, 0.15);">
+                        <i class="bi bi-code-slash fs-2" style="color: #8b5cf6;"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="p-3 bg-dark rounded shadow-sm">
-                    <i class="bi bi-database fs-2 text-info"></i>
-                    <h5 class="mt-2">Bases de Datos</h5>
-                    <p>MySQL, PostgreSQL</p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="p-3 bg-dark rounded shadow-sm">
-                    <i class="bi bi-hdd-network fs-2 text-info"></i>
-                    <h5 class="mt-2">Servidores</h5>
-                    <p>Linux, Apache, Docker</p>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="p-3 bg-dark rounded shadow-sm">
-                    <i class="bi bi-shield-lock fs-2 text-info"></i>
-                    <h5 class="mt-2">Otros</h5>
-                    <p>Ciberseguridad, Automatización</p>
-                </div>
+                <h5 class="mt-2 text-white">Lenguajes</h5>
+                <p class="text-gray-400 mb-0" style="color: #94a3b8;">PHP, Python, JavaScript, C++, Java</p>
             </div>
         </div>
-    </section>
+
+        <!-- Bases de Datos -->
+        <div class="col-md-3">
+            <div class="p-4 rounded-3 shadow-sm" style="
+                background: linear-gradient(145deg, #111827, #0f172a);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                transition: all 0.3s;
+                height: 100%;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(239, 68, 68, 0.2)'; this.style.borderColor='rgba(239, 68, 68, 0.6)';" 
+            onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.3)'; this.style.borderColor='rgba(59, 130, 246, 0.3)';">
+                <div class="mb-3">
+                    <div class="d-inline-block p-3 rounded-circle" style="background-color: rgba(239, 68, 68, 0.15);">
+                        <i class="bi bi-database fs-2" style="color: #ef4444;"></i>
+                    </div>
+                </div>
+                <h5 class="mt-2 text-white">Bases de Datos</h5>
+                <p class="text-gray-400 mb-0" style="color: #94a3b8;">MySQL, PostgreSQL</p>
+            </div>
+        </div>
+
+        <!-- Servidores -->
+        <div class="col-md-3">
+            <div class="p-4 rounded-3 shadow-sm" style="
+                background: linear-gradient(145deg, #111827, #0f172a);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                transition: all 0.3s;
+                height: 100%;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(59, 130, 246, 0.2)'; this.style.borderColor='rgba(59, 130, 246, 0.6)';" 
+            onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.3)'; this.style.borderColor='rgba(59, 130, 246, 0.3)';">
+                <div class="mb-3">
+                    <div class="d-inline-block p-3 rounded-circle" style="background-color: rgba(59, 130, 246, 0.15);">
+                        <i class="bi bi-hdd-network fs-2" style="color: #3b82f6;"></i>
+                    </div>
+                </div>
+                <h5 class="mt-2 text-white">Servidores</h5>
+                <p class="text-gray-400 mb-0" style="color: #94a3b8;">Linux, Apache, Docker</p>
+            </div>
+        </div>
+
+        <!-- Otros -->
+        <div class="col-md-3">
+            <div class="p-4 rounded-3 shadow-sm" style="
+                background: linear-gradient(145deg, #111827, #0f172a);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                transition: all 0.3s;
+                height: 100%;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 25px rgba(16, 185, 129, 0.2)'; this.style.borderColor='rgba(16, 185, 129, 0.6)';" 
+            onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.3)'; this.style.borderColor='rgba(59, 130, 246, 0.3)';">
+                <div class="mb-3">
+                    <div class="d-inline-block p-3 rounded-circle" style="background-color: rgba(16, 185, 129, 0.15);">
+                        <i class="bi bi-shield-lock fs-2" style="color: #10b981;"></i>
+                    </div>
+                </div>
+                <h5 class="mt-2 text-white">Otros</h5>
+                <p class="text-gray-400 mb-0" style="color: #94a3b8;">Ciberseguridad, Automatización</p>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @push('styles')
