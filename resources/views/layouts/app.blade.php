@@ -133,14 +133,20 @@ footer {
                     </ul>
                 </div>
                 @endif
-                <form action="{{ route('contact.send') }}" method="POST" class="contact-form d-flex flex-column gap-2">
-                    @csrf
+                <form action="{{ route('contact.send') }}" method="POST" class="contact-form d-flex flex-column gap-3">
+                @csrf
+
+                    <!-- Honeypot field - invisible para humanos -->
+                    <div style="display:none; position:absolute; left:-9999px;">
+                        <label for="website">Website</label>
+                        <input type="text" name="website" id="website" autocomplete="off">
+                    </div>
+                
+                    <!-- Resto del formulario igual -->
                     <input type="text" name="name" placeholder="Nombre" class="form-control bg-secondary text-light border-0" required>
                     <input type="email" name="email" placeholder="Correo electrónico" class="form-control bg-secondary text-light border-0" required>
-                    <textarea name="message" rows="3" placeholder="Mensaje" class="form-control bg-secondary text-light border-0" required></textarea>
-                    <button type="submit" class="btn btn-outline-info btn-sm align-self-start">
-                        Enviar mensaje
-                    </button>
+                    <textarea name="message" rows="4" placeholder="Mensaje" class="form-control bg-secondary text-light border-0" required></textarea>
+                    <button type="submit" class="btn btn-info">Enviar mensaje</button>
                 </form>
             </div>
 
