@@ -90,7 +90,7 @@ class ContactController extends Controller
         try {
             // ===== 7. Enviar email =====
             Mail::raw($content, function ($message) use ($name, $email) {
-                $message->to('gucerni@gmail.com')
+                $message->to('ejemplo@gmail.com')
                         ->subject('Nuevo mensaje desde el portafolio - ' . now()->format('Y-m-d'))
                         ->from(config('mail.from.address', 'noreply@tudominio.com'), 'Portafolio')
                         ->replyTo($email, $name);
