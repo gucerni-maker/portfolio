@@ -154,10 +154,10 @@ footer {
             <div class="col-md-4 text-md-end">
                 <h5 class="text-info">Redes</h5>
                 <div class="d-flex flex-column gap-2">
-                    <a href="#" target="_blank">
+                    <a href="https://www.linkedin.com/in/gustavo-cerda-a63605384" target="_blank">
                         <i class="bi bi-linkedin"></i> LinkedIn
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://github.com/gucerni-maker" target="_blank">
                         <i class="bi bi-github"></i> GitHub
                     </a>
                 </div>

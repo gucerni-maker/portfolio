@@ -122,12 +122,12 @@
             <div class="col-md-4">
                 <div class="card bg-dark text-light shadow-lg h-100">
                     <video autoplay loop muted playsinline class="card-img-top">
-                        <source src="{{ asset('images/pkmn3.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('images/actas.mp4') }}" type="video/mp4">
                     </video>
                     <div class="card-body">
                         <h5 class="card-title text-info">Sistema de Actas</h5>
-                        <p class="card-text">CRUD en Laravel y MySQL para la gestión de actas, con un enfoque práctico y seguro.</p>
-                        <a href="#" class="btn btn-outline-info">Ver Proyecto</a>
+                        <p class="card-text">Sistema en Laravel y MySQL para la creación y gestión de actas de entrega, con la finalidad de llevar un control .</p>
+                        <a href="http://actas.56.125.101.83.nip.io/" class="btn btn-outline-info">Ver Proyecto</a>
                     </div>
                 </div>
             </div>
