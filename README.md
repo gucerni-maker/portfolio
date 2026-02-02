@@ -1,61 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Portafolio Personal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Portafolio web personal construido con Laravel para mostrar mis habilidades y proyectos desarrollados.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-8.x-FF2D20?logo=laravel)
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 Descripción
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Este proyecto es un portafolio personal que muestra:
+- Mi experiencia y habilidades técnicas
+- Proyectos web desarrollados
+- Información de contacto
+- Formulario de contacto funcional con envío de correos electrónicos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Características
 
-## Learning Laravel
+- ✨ Diseño moderno y responsive
+- 📧 Formulario de contacto con envío de emails
+- 🎨 Secciones interactivas
+- 🚢 Despliegue fácil con Docker (Laravel Sail)
+- 📱 Totalmente responsive para móviles y tablets
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📦 Requisitos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Antes de comenzar, asegúrate de tener instalado:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Docker** (versión 20.10 o superior)
+- **Docker Compose** (versión 2.0 o superior)
+- **Git** (para clonar el repositorio)
 
-## Laravel Sponsors
+## 🛠️ Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clonar el repositorio
 
-### Premium Partners
+```bash
+git clone https://github.com/tu-usuario/portafolio.git
+cd portafolio
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Instalar dependencias de Composer
+composer install
 
-## Contributing
+Configurar variables de entorno
+cp .env.example .env
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Configurar el correo electrónico (Formulario de contacto)
+MAIL_MAILER=smtp
+MAIL_HOST=tu-smtp-host.com
+MAIL_PORT=587
+MAIL_USERNAME=tu-email@ejemplo.com
+MAIL_PASSWORD=tu-contraseña
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=tu-email@ejemplo.com
+MAIL_FROM_NAME="${APP_NAME}"
 
-## Code of Conduct
+Servicios de correo recomendados:
+Gmail: Usa App Password si tienes 2FA activado
+Mailgun: Ideal para producción
+SendGrid: Alternativa robusta
+Mailtrap: Perfecto para entornos de desarrollo (no envía emails reales)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Iniciar el entorno con Laravel Sail
+./vendor/bin/sail up -d
+ 
+Acceder a la aplicación
+http://localhost
 
-## Security Vulnerabilities
+Si tienes Apache u otros servicios usando el puerto 80, puedes cambiar el puerto en .env:
+APP_PORT=8080
+Luego reinicia Sail:
+./vendor/bin/sail down && ./vendor/bin/sail up -d
+Y accede a: http://localhost:8080
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Comandos útiles de Sail
+# Iniciar contenedores
+./vendor/bin/sail up -d
 
-## License
+# Detener contenedores
+./vendor/bin/sail down
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Ver logs en tiempo real
+./vendor/bin/sail logs -f
+
+# Acceder al contenedor de Laravel
+./vendor/bin/sail shell
+
+# Ejecutar comandos Artisan
+./vendor/bin/sail artisan [comando]
+
+# Ejecutar migraciones (si aplica)
+./vendor/bin/sail artisan migrate
+
+# Ejecutar tests
+./vendor/bin/sail test
+
+Configuración del Formulario de Contacto
+El formulario de contacto está configurado en app/Http/Controllers/ContactController.php.
+Para personalizar el correo destino, edita el método correspondiente:
+\Mail::to('tu-email@ejemplo.com')->send(new ContactFormMail($data));
