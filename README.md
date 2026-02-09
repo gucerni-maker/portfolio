@@ -1,41 +1,33 @@
 # Portafolio Personal
-
 Portafolio web personal construido con Laravel para mostrar mis habilidades y proyectos desarrollados.
 
-![Laravel](https://img.shields.io/badge/Laravel-8.x-FF2D20?logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php)
-![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
-
-## 📋 Descripción
-
+## Descripción
 Este proyecto es un portafolio personal que muestra:
 - Mi experiencia y habilidades técnicas
 - Proyectos web desarrollados
 - Información de contacto
 - Formulario de contacto funcional con envío de correos electrónicos
 
-## 🚀 Características
+## Características
+-  Diseño moderno y responsive
+-  Formulario de contacto con envío de emails
+-  Secciones interactivas
+-  Despliegue fácil con Docker (Laravel Sail)
+-  Totalmente responsive para móviles y tablets
 
-- ✨ Diseño moderno y responsive
-- 📧 Formulario de contacto con envío de emails
-- 🎨 Secciones interactivas
-- 🚢 Despliegue fácil con Docker (Laravel Sail)
-- 📱 Totalmente responsive para móviles y tablets
-
-## 📦 Requisitos
-
+## Requisitos
 Antes de comenzar, asegúrate de tener instalado:
 
-- **Docker** (versión 20.10 o superior)
-- **Docker Compose** (versión 2.0 o superior)
-- **Git** (para clonar el repositorio)
+- **Docker**
+- **Docker Compose**
+- **Git**
 
-## 🛠️ Instalación
+## Instalación
 
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/portafolio.git
+git clone https://github.com/gucerni-maker/portafolio.git
 cd portafolio
 
 Instalar dependencias de Composer
