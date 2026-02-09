@@ -18,26 +18,35 @@ Este proyecto es un portafolio personal que muestra:
 ## Requisitos
 Antes de comenzar, asegúrate de tener instalado:
 
-- **Docker**
-- **Docker Compose**
-- **Git**
+- Docker
+- Docker Compose
+- Git
 
 ## Instalación
 
-### 1. Clonar el repositorio
+# Descargar e ingresar al directorio
+- git clone https://github.com/gucerni-maker/portfolio.git
+- cd portfolio
 
-```bash
-git clone https://github.com/gucerni-maker/portafolio.git
-cd portafolio
+# Otorgar permisos
+- chmod -R 775 storage bootstrap/cache
 
-Instalar dependencias de Composer
-composer install
+# Instalar dependencias
+- composer install
 
-Configurar variables de entorno
-cp .env.example .env
-php artisan key:generate
+# Configurar variables de entorno
+- cp .env.example .env
+- nano .env
 
-Configurar el correo electrónico (Formulario de contacto)
+# configurar archivo .env
+APP_PORT=8080
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+
 MAIL_MAILER=smtp
 MAIL_HOST=tu-smtp-host.com
 MAIL_PORT=587
@@ -47,47 +56,25 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=tu-email@ejemplo.com
 MAIL_FROM_NAME="${APP_NAME}"
 
-Servicios de correo recomendados:
+# Servicios de correo recomendados:
 Gmail: Usa App Password si tienes 2FA activado
 Mailgun: Ideal para producción
 SendGrid: Alternativa robusta
 Mailtrap: Perfecto para entornos de desarrollo (no envía emails reales)
 
-Iniciar el entorno con Laravel Sail
+# Configuración del Formulario de Contacto
+El formulario de contacto está configurado en app/Http/Controllers/ContactController.php.
+Para personalizar el correo destino, edita el método correspondiente:
+$message->to('ejemplo@gmail.com')
+
+# Generar clave de aplicación
+- php artisan key:generate
+
+# Construir la imagen
 ./vendor/bin/sail up -d
  
 Acceder a la aplicación
 http://localhost
 
-Si tienes Apache u otros servicios usando el puerto 80, puedes cambiar el puerto en .env:
-APP_PORT=8080
-Luego reinicia Sail:
-./vendor/bin/sail down && ./vendor/bin/sail up -d
-Y accede a: http://localhost:8080
-
-Comandos útiles de Sail
-# Iniciar contenedores
-./vendor/bin/sail up -d
-
-# Detener contenedores
-./vendor/bin/sail down
-
-# Ver logs en tiempo real
-./vendor/bin/sail logs -f
-
-# Acceder al contenedor de Laravel
-./vendor/bin/sail shell
-
-# Ejecutar comandos Artisan
-./vendor/bin/sail artisan [comando]
-
-# Ejecutar migraciones (si aplica)
-./vendor/bin/sail artisan migrate
-
-# Ejecutar tests
-./vendor/bin/sail test
-
-Configuración del Formulario de Contacto
-El formulario de contacto está configurado en app/Http/Controllers/ContactController.php.
-Para personalizar el correo destino, edita el método correspondiente:
-\Mail::to('tu-email@ejemplo.com')->send(new ContactFormMail($data));
+# Acceder a la aplicacion
+- http://localhost:8080

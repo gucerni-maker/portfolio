@@ -115,7 +115,7 @@ class ContactController extends Controller
             ]);
 
             return redirect()->to(url()->previous() . '#contacto')
-                ->withErrors(['message' => 'Error al enviar el mensaje. Por favor inténtalo más tarde o escríbeme directamente a gucerni@gmail.com']);
+                ->withErrors(['message' => 'Error al enviar el mensaje. Por favor inténtalo más tarde.']);
         }
     }
 }
