@@ -16,11 +16,24 @@ Este proyecto es un portafolio personal que muestra:
 -  Totalmente responsive para móviles y tablets
 
 ## Requisitos
-Antes de comenzar, asegúrate de tener instalado:
 
-- Docker
-- Docker Compose
 - Git
+    sudo apt install git
+    
+- Docker y docker compose
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+    
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+    sudo usermod -aG docker ${USER}
 
 ## Instalación
 
@@ -32,7 +45,12 @@ Antes de comenzar, asegúrate de tener instalado:
 - chmod -R 775 storage bootstrap/cache
 
 # Instalar dependencias
-- composer install
+- docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
 
 # Configurar variables de entorno
 - cp .env.example .env
@@ -67,14 +85,14 @@ El formulario de contacto está configurado en app/Http/Controllers/ContactContr
 Para personalizar el correo destino, edita el método correspondiente:
 $message->to('ejemplo@gmail.com')
 
-# Generar clave de aplicación
-- php artisan key:generate
-
 # Construir la imagen
 ./vendor/bin/sail up -d
- 
-Acceder a la aplicación
-http://localhost
+
+# Generar clave de aplicación
+- ./vendor/bin/sail artisan key:generate
+
+# Ejecutar las migraciones
+- ./vendor/bin/sail artisan migrate 
 
 # Acceder a la aplicacion
 - http://localhost:8080
